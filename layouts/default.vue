@@ -1,5 +1,14 @@
 <template>
   <div>
+    <div>
+      Logo
+      <ul>
+        <li>Industries</li>
+        <li>Services</li>
+        <li>About Us</li>
+      </ul>
+      <button>Contact Us</button>
+    </div>
     <nuxt />
   </div>
 </template>
