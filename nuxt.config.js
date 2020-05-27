@@ -1,9 +1,19 @@
 
+import content from './static/content.json'
+
 export default {
   mode: 'spa',
   /*
   ** Headers of the page
   */
+  env: {
+    baseURL: 'http://localhost:3000'
+  },
+  generate: {
+    routes() {
+      return content['pages'].map(page => `/${page.slug}`)
+    }
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [

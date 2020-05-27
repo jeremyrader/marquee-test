@@ -14,7 +14,10 @@
 <script>
 
 export default {
-  components: {
+  mounted() {
+    fetch('/content.json')
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 }
 </script>
