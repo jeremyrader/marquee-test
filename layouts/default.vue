@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div>
-      <img src="abc_logo.svg" />
-      <ul>
-        <li><nuxt-link to="/industries">Industries</nuxt-link></li>
-        <li><nuxt-link to="/services">Services</nuxt-link></li>
-        <li><nuxt-link to="/about-us">About Us</nuxt-link> Us</li>
-      </ul>
+    <div style="display: flex; justify-content: space-between;">
+      <div>
+        <img src="abc_logo.svg" />
+        <div style="display: flex; flex-direction: column">
+          <nuxt-link to="/industries">Industries</nuxt-link>
+          <nuxt-link to="/services">Services</nuxt-link>
+          <nuxt-link to="/about-us">About Us</nuxt-link>
+        </div>
+      </div>
       <button>Contact Us</button>
     </div>
     <nuxt />
@@ -47,8 +49,12 @@ export default {
 }
 </script>
 
-<style>
-body {
-  color: white;
-}
+<style lang="stylus">
+body
+  color: white
+  margin-left: 130px
+  margin-right: 130px
+  margin-top: 18.9px
+  font-size: 14px
+
 </style>

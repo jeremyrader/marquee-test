@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <div>
-      <h2>{{ headline }}</h2>
-      <h3>{{ subhead }}</h3>
-      <p>{{ cta }}</p>
-      <button>Let's talk.</button>
+      <div style="display: flex; justify-content: space-between;">
+        <h2>{{ headline }}</h2>
+        <h3>{{ subhead }}</h3>
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <p>{{ cta }}</p>
+        <button>Let's talk.</button>
+      </div>
     </div>
   </div>
 </template>
