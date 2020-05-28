@@ -1,13 +1,17 @@
 <template>
   <div class="container">
     <div>
-      <div style="display: flex; justify-content: space-between;">
-        <h2>{{ headline }}</h2>
-        <h3>{{ subhead }}</h3>
+      <div class="content">
+        <p class="headline">{{ headline }}</p>
+        <p class="subhead">{{ subhead }}</p>
       </div>
-      <div style="display: flex; justify-content: space-between;">
+      <div class="marquee">
         <p>{{ cta }}</p>
-        <button>Let's talk.</button>
+        <div>
+          <p>{{ "Let's talk.".toUpperCase() }} </p>
+          <img src="arrow-right.svg" />
+        </div>
+        
       </div>
     </div>
   </div>
@@ -44,3 +48,39 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.headline
+  font-size: 84px
+  line-height: 1
+  letter-spacing: -2.2px
+  margin: 0
+.subhead
+  padding-left: 171px
+  padding-right: 171px
+.content
+  display: flex
+  padding-top: 5px
+.marquee
+  display: flex
+  align-items: center
+  height: 179px
+  background-color: #ffffff
+  padding-left: 77px
+  p
+    font-size: 24px
+    line-height: 1.33
+    letter-spacing: -0.63px
+    color: #000000
+    width: 50%
+  div
+    display: flex
+    justify-content: center
+    width: 50%
+    p
+      font-size: 11px
+      font-weight: 500
+      line-height: 1.82
+      letter-spacing: 1px
+      width: 80px
+</style>
