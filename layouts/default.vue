@@ -1,6 +1,6 @@
 <template>
-  <div class="Text-Style">
-    <div style="display: flex; justify-content: space-between;">
+  <div class="container">
+    <div class="header">
       <div>
         <img src="abc_logo.svg" />
         <div style="display: flex; flex-direction: column">
@@ -17,46 +17,38 @@
 
 <script>
 
-export default {
-  head() {
-    return {
-      title: this.title,
-      bodyAttrs: {
-        style: `background-image: url(/backgrounds/${this.background})`
-      }
-    }
-  },
-  data() {
-    return {
-      pageInfo: null
-    }
-  },
-  computed: {
-    title() {
-      return this.pageInfo ? this.pageInfo.title : ''
-    },
-    background() {
-      return this.pageInfo ? this.pageInfo.blocks[0].background : ''
-    }
-  },
-  mounted() {
-    fetch('/content.json')
-      .then(res => res.json())
-      .then(data => {
-        this.pageInfo = data['pages'].find(page => page.slug === this.$route.params.slug)
-      })
-  }
-}
+export default {}
 </script>
 
 <style lang="stylus">
 body
   color: white
+  margin: 0px
   margin-left: 130px
   margin-right: 130px
   margin-top: 18.9px
   font-size: 14px
-  min-height 100vh
+  height: 100vh
+  max-width: 1440px
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.86;
+  letter-spacing: normal;
+  color: #ffffff;
+
+#__nuxt
+  height: 100%
+
+#__layout
+  height: 100%
+
+.container
+  height: 100%
+  display: flex
+  flex-direction: column
 
 .link
   text-decoration none
@@ -64,6 +56,10 @@ body
 
 .link:focus
   color #ffc004
+
+.header
+  display: flex
+  justify-content: space-between
 
 .contact
   width: 139px
@@ -91,6 +87,5 @@ body
   letter-spacing: normal;
   color: #ffffff;
 }
-
 
 </style>
