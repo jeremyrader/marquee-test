@@ -7,8 +7,10 @@
     <div class="cta">
       <p>{{ cta }}</p>
       <div>
-        <p>{{ "Let's talk.".toUpperCase() }} </p>
-        <img src="images/arrow-right.svg" />
+        <div>
+          <p>{{ "Let's talk.".toUpperCase() }} </p>
+          <img src="images/arrow-right.svg" />
+        </div>
       </div>
     </div>
   </div>
@@ -95,15 +97,17 @@ export default {
     display: flex
     justify-content: center
     width: 50%
-    p
-      fluid font-size, 11, 8, 1440
-      font-weight: 500
-      line-height: 1.82
-      letter-spacing: 1px
-      fluid width, 80, 60, 1440
-  div:hover
-    cursor: pointer
-    opacity: 0.8
-  div:active
-    opacity: 0.5
+    div
+      width: 100px
+      p
+        fluid font-size, 11, 8, 1440
+        font-weight: 500
+        line-height: 1.82
+        letter-spacing: 1px
+        fluid width, 80, 60, 1440
+    div:hover
+      cursor: pointer
+      opacity: 0.8
+    div:active
+      opacity: 0.5
 </style>
