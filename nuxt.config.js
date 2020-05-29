@@ -1,4 +1,4 @@
-import content from './static/content.json'
+import content from './static/data/content.json'
 
 export default {
   mode: 'spa',
