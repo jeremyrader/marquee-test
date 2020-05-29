@@ -4,7 +4,7 @@
       <p class="headline">{{ headline }}</p>
       <p class="subhead">{{ subhead }}</p>
     </div>
-    <div class="marquee">
+    <div class="cta">
       <p>{{ cta }}</p>
       <div>
         <p>{{ "Let's talk.".toUpperCase() }} </p>
@@ -58,42 +58,39 @@ export default {
 </script>
 
 <style lang="stylus">
-.component
-  height: 100%
+@import '~bukwild-stylus-library'
 .page
   height: 100%
   display: flex
   flex-direction: column
-.headline
-  font-size: 84px
-  line-height: 1
-  letter-spacing: -2.2px
-  margin: 0
-  width: 50%
-.subhead
-  width: 50%
-  padding-left: 50px
-  padding-right: 50px
 .content
   height: 100%
   display: flex
   justify-content: space-between
   align-items: center
-  padding-top: 5px
-  margin-top: 100px
-  margin-bottom: 100px
+  fluid padding-top, 5, 1, 1440
+  fluid margin-top, 100, 50, 1440
+  fluid margin-bottom, 100, 50, 1440
   word-break: break-all
-.marquee
+.headline
+  fluid font-size, 84, 14, 1440
+  line-height: 1
+  margin: 0
+  width: 50%
+.subhead
+  width: 50%
+  fluid padding-left, 50, 25, 1440
+  fluid padding-right, 50, 25, 1440
+.cta
   display: flex
   align-items: center
-  min-height: 179px
+  fluid min-height, 179, 150, 1440
   background-color: #ffffff
-  padding-left: 77px
+  fluid padding-left, 77, 50, 1440
   word-break: break-all
   p
-    font-size: 24px
+    fluid font-size, 24, 12, 1440
     line-height: 1.33
-    letter-spacing: -0.63px
     color: #000000
     width: 50%
   div
@@ -101,9 +98,9 @@ export default {
     justify-content: center
     width: 50%
     p
-      font-size: 11px
+      fluid font-size, 11, 8, 1440
       font-weight: 500
       line-height: 1.82
       letter-spacing: 1px
-      width: 80px
+      fluid width, 80, 60, 1440
 </style>
