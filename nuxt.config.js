@@ -1,6 +1,3 @@
-
-import content from './static/content.json'
-
 export default {
   mode: 'spa',
   /*

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div v-if="pageInfo" class="page">
     <div class="content">
       <p class="headline">{{ headline }}</p>
       <p class="subhead">{{ subhead }}</p>
@@ -8,7 +8,7 @@
       <p>{{ cta }}</p>
       <div>
         <p>{{ "Let's talk.".toUpperCase() }} </p>
-        <img src="arrow-right.svg" />
+        <img src="images/arrow-right.svg" />
       </div>
     </div>
   </div>
@@ -18,12 +18,12 @@
 
 export default {
   head() {
-    return {
+    return this.pageInfo ? {
       title: this.title,
       bodyAttrs: {
         style: `background-image: url(/backgrounds/${this.background})`
       }
-    }
+    } : null
   },
   data() {
     return {
@@ -32,23 +32,23 @@ export default {
   },
   computed: {
     headline() {
-      return this.pageInfo ? this.pageInfo.blocks[0].headline : ''
+      return this.pageInfo.blocks[0].headline
     },
     subhead() {
-      return this.pageInfo ? this.pageInfo.blocks[0].subhead : ''
+      return this.pageInfo.blocks[0].subhead
     },
     cta() {
-      return this.pageInfo ? this.pageInfo.blocks[0].cta : ''
+      return this.pageInfo.blocks[0].cta
     },
     background() {
-      return this.pageInfo ? this.pageInfo.blocks[0].background : ''
+      return this.pageInfo.blocks[0].background
     },
     title() {
-      return this.pageInfo ? this.pageInfo.title : ''
+      return this.pageInfo.title
     },
   },
   mounted() {
-    fetch('/content.json')
+    fetch('/data/content.json')
       .then(res => res.json())
       .then(data => {
         this.pageInfo = data['pages'].find(page => page.slug === this.$route.params.slug)
@@ -69,8 +69,6 @@ export default {
   justify-content: space-between
   align-items: center
   fluid padding-top, 5, 1, 1440
-  fluid margin-top, 100, 50, 1440
-  fluid margin-bottom, 100, 50, 1440
   word-break: break-all
 .headline
   fluid font-size, 84, 14, 1440
@@ -103,4 +101,9 @@ export default {
       line-height: 1.82
       letter-spacing: 1px
       fluid width, 80, 60, 1440
+  div:hover
+    cursor: pointer
+    opacity: 0.8
+  div:active
+    opacity: 0.5
 </style>

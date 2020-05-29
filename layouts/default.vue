@@ -2,9 +2,9 @@
   <div class="container">
     <div class="header">
       <div>
-        <img src="abc_logo.svg" />
+        <img src="images/abc_logo.svg" loading="lazy" alt="abc logo" />
         <div class="menu">
-          <nuxt-link to="/industries" class="link">Industries</nuxt-link>
+          <nuxt-link id="industries" to="/industries" class="link">Industries</nuxt-link>
           <nuxt-link to="/services" class="link">Services</nuxt-link>
           <nuxt-link to="/about-us" class="link">About Us</nuxt-link>
         </div>
@@ -17,7 +17,11 @@
 
 <script>
 
-export default {}
+export default {
+  mounted() {
+    document.getElementById("industries").focus()
+  }
+}
 </script>
 
 <style lang="stylus">
@@ -40,6 +44,7 @@ body
   line-height: 1.86
   letter-spacing: normal
   color: #ffffff
+  overflow-y: hidden
 
 .menu
   display: flex
@@ -64,6 +69,13 @@ body
   text-align: center
   font-weight: 700
 
+.contact-btn:hover
+  cursor: pointer
+  opacity: 0.8
+
+.contact-btn:active
+  opacity: 0.5
+
 #__nuxt
   height: 100%
 
@@ -74,8 +86,12 @@ body
   text-decoration none
   color inherit
 
+.link:hover
+  opacity: 0.8
+
 .link:focus
   color #ffc004
+  outline: none
 
 @font-face {
   font-family: HelveticaNeue
